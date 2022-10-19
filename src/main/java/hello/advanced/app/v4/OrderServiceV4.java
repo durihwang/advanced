@@ -14,10 +14,11 @@ public class OrderServiceV4 {
 
     public void orderItem(String itemId) {
 
+
         AbstractTemplate<Void> template = new AbstractTemplate<>(trace) {
 
             @Override
-            protected Void call() {
+            public Void call() {
                 orderRepository.save(itemId);
                 return null;
             }
